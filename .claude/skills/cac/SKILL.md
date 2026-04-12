@@ -141,7 +141,8 @@ DOMAIN 5 — PROJECTS/ARTIFACTS/SKILLS
 │       ├── lib/           # courses.ts, progress.ts, settings.tsx
 │       └── data/
 │           └── courses.json  # 5 domains, 30 lessons, 15 quiz questions
-└── cheat/                 # coming soon (condensed PDF)
+└── cheat/
+    └── CHEAT.md           # condensed cheat sheet — all 5 domains
 ```
 
 ---

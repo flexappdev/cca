@@ -7,7 +7,7 @@ A complete study system for the **Claude Certified Architect (CCA)** certificati
 | `/cac` skill | Claude Code agent that coaches you through exam prep |
 | `app/` | Next.js study dashboard with practice questions and progress tracking |
 | `docs/cac-guide.md` | **[Full certification guide](./docs/cac-guide.md)** — all 5 domains, code examples, anti-patterns, glossary |
-| `cheat/` | Condensed cheat sheet + exportable PDF (coming soon) |
+| [`cheat/CHEAT.md`](./cheat/CHEAT.md) | Condensed cheat sheet — all 5 domains, quick-reference tables, top anti-patterns |
 
 ---
 
@@ -100,7 +100,8 @@ cac/                        # github.com/flexappdev/cac
 │           └── SKILL.md    # Claude Code /cac skill — install instructions below
 ├── app/                    # Next.js study dashboard — localhost:24301
 │   └── src/
-└── cheat/                  # coming soon
+└── cheat/
+    └── CHEAT.md            # Condensed cheat sheet — all 5 domains, quick-reference tables
 ```
 
 ---
