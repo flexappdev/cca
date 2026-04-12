@@ -16,7 +16,7 @@ A complete study system for the **Claude Certified Architect (CCA)** certificati
 The **Claude Certified Architect** is Anthropic's official practitioner certification. It validates real-world ability to design, build, and deploy production AI systems using Claude — not just API knowledge.
 
 - **Register:** [anthropic.skilljar.com](https://anthropic.skilljar.com/claude-certified-architect-foundations-access-request)
-- **Study resources:** [claudecertifications.com](https://claudecertifications.com/) (free — no paywall)
+- **This repo:** [github.com/flexappdev/cac](https://github.com/flexappdev/cac)
 - **Official cookbook:** [github.com/anthropics/anthropic-cookbook](https://github.com/anthropics/anthropic-cookbook)
 
 ---
@@ -68,7 +68,7 @@ Persistent project organisation. Custom skill automation via Claude Code's skill
 | Resource | Purpose |
 |---|---|
 | [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Canonical code examples — start here |
-| [claudecertifications.com](https://claudecertifications.com/) | Free study guide, 25+ practice Qs, anti-patterns |
+| [github.com/flexappdev/cac](https://github.com/flexappdev/cac) | This repo — guide, app, skill |
 | [Skilljar Training Courses](https://anthropic.skilljar.com/) | Official Anthropic training modules |
 | [Cookbook: managed_agents](https://github.com/anthropics/anthropic-cookbook/tree/main/managed_agents) | Agent SDK patterns |
 | [Cookbook: tool_use](https://github.com/anthropics/anthropic-cookbook/tree/main/tool_use) | Tool integration examples |
@@ -89,15 +89,17 @@ Persistent project organisation. Custom skill automation via Claude Code's skill
 ## This Repo Structure
 
 ```
-cac/
-├── README.md          # This file
+cac/                        # github.com/flexappdev/cac
+├── README.md
 ├── LICENSE
-├── cheat/
-│   ├── cac-cheat.md   # Full cheat guide (all 5 domains)
-│   └── cac-cheat.pdf  # Exportable PDF version
-└── app/               # Next.js study dashboard
-    ├── src/
-    └── ...
+├── docs/
+│   └── cac-guide.md        # Comprehensive 5-domain exam guide (1562 lines)
+├── app/                    # Next.js study dashboard — localhost:24301
+│   └── src/
+└── cheat/                  # coming soon
+
+~/.claude/skills/cac/       # Claude Code skill (not in this repo)
+└── SKILL.md                # /cac, /cac quiz, /cac domain, /cac app, ...
 ```
 
 ---
