@@ -6,7 +6,8 @@ A complete study system for the **Claude Certified Architect (CCA)** certificati
 |---|---|
 | `/cac` skill | Claude Code agent that coaches you through exam prep |
 | `app/` | Next.js study dashboard with practice questions and progress tracking |
-| `cheat/` | Markdown cheat guide + exportable PDF |
+| `docs/cac-guide.md` | **[Full certification guide](./docs/cac-guide.md)** — all 5 domains, code examples, anti-patterns, glossary |
+| `cheat/` | Condensed cheat sheet + exportable PDF (coming soon) |
 
 ---
 

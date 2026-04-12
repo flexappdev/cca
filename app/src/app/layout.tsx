@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { SettingsProvider } from "@/lib/settings";
+import ShellWrapper from "@/components/ShellWrapper";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "CCA Study App",
+  description: "Claude Certified Architect exam preparation — 5 domains, lessons, and practice quizzes",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className="dark">
+      <body className={`${inter.className} min-h-screen bg-[#0a0a0a] text-zinc-100`}>
+        <SettingsProvider>
+          <ShellWrapper>
+            {children}
+          </ShellWrapper>
+        </SettingsProvider>
+      </body>
+    </html>
+  );
+}

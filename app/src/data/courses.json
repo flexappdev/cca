@@ -1,0 +1,82 @@
+[
+  {
+    "id": "prompt-engineering",
+    "title": "Prompt Engineering & AI Fluency",
+    "domain": 1,
+    "color": "blue",
+    "icon": "MessageSquare",
+    "description": "Master system prompts, instruction hierarchy, few-shot examples, chain-of-thought, and Claude-specific features.",
+    "lessons": [
+      { "id": "system-prompts", "title": "System Prompt Design", "duration": "20min" },
+      { "id": "instruction-hierarchy", "title": "Instruction Hierarchy", "duration": "15min" },
+      { "id": "few-shot", "title": "Few-Shot Prompting", "duration": "20min" },
+      { "id": "chain-of-thought", "title": "Chain of Thought & Extended Thinking", "duration": "25min" },
+      { "id": "output-formatting", "title": "Output Formatting", "duration": "15min" },
+      { "id": "claude-specific", "title": "Claude-Specific Features", "duration": "20min" }
+    ]
+  },
+  {
+    "id": "claude-code",
+    "title": "Claude Code Development",
+    "domain": 2,
+    "color": "orange",
+    "icon": "Terminal",
+    "description": "CLAUDE.md, memory system, hooks, MCP servers, SDK, GitHub integration, and the 6 Claude Code extensions.",
+    "lessons": [
+      { "id": "claude-md", "title": "CLAUDE.md & Project Context", "duration": "20min" },
+      { "id": "memory", "title": "Memory System (4 Types)", "duration": "25min" },
+      { "id": "hooks", "title": "Hooks — Deterministic Scripts", "duration": "20min" },
+      { "id": "mcp-consuming", "title": "Consuming MCP Servers", "duration": "20min" },
+      { "id": "sdk", "title": "Claude Code SDK", "duration": "25min" },
+      { "id": "skills", "title": "Skills & Slash Commands", "duration": "20min" }
+    ]
+  },
+  {
+    "id": "agentic-architecture",
+    "title": "Agentic Architecture",
+    "domain": 3,
+    "color": "purple",
+    "icon": "Bot",
+    "description": "Multi-agent patterns, orchestrator/worker design, tool use vs subagents, agent loops, and the Claude Agent SDK.",
+    "lessons": [
+      { "id": "agent-loop", "title": "The Agent Loop", "duration": "20min" },
+      { "id": "orchestrator-worker", "title": "Orchestrator/Worker Pattern", "duration": "25min" },
+      { "id": "tool-vs-agent", "title": "Tool Use vs Subagents", "duration": "20min" },
+      { "id": "parallel-sequential", "title": "Parallel vs Sequential Execution", "duration": "15min" },
+      { "id": "agent-sdk", "title": "Claude Agent SDK", "duration": "30min" },
+      { "id": "error-handling", "title": "Error Handling in Agent Loops", "duration": "20min" }
+    ]
+  },
+  {
+    "id": "mcp",
+    "title": "Model Context Protocol",
+    "domain": 4,
+    "color": "teal",
+    "icon": "Plug",
+    "description": "MCP architecture, building servers, tool definitions, transport types, auth patterns, and common MCP servers.",
+    "lessons": [
+      { "id": "mcp-architecture", "title": "MCP Architecture (Host/Client/Server)", "duration": "20min" },
+      { "id": "tool-definitions", "title": "Tool & Resource Definitions", "duration": "25min" },
+      { "id": "build-server", "title": "Building an MCP Server", "duration": "35min" },
+      { "id": "transport", "title": "Transport: stdio vs SSE", "duration": "15min" },
+      { "id": "auth", "title": "Auth Patterns", "duration": "20min" },
+      { "id": "common-servers", "title": "Common MCP Servers", "duration": "15min" }
+    ]
+  },
+  {
+    "id": "projects-artifacts",
+    "title": "Projects, Artifacts & Skills",
+    "domain": 5,
+    "color": "pink",
+    "icon": "FolderOpen",
+    "description": "Claude.ai Projects, artifact types, skills system, context hygiene, task tracking, plan mode, and worktrees.",
+    "lessons": [
+      { "id": "projects", "title": "Claude.ai Projects", "duration": "20min" },
+      { "id": "artifacts", "title": "Artifact Types & Usage", "duration": "20min" },
+      { "id": "skills-system", "title": "Skills System Deep Dive", "duration": "25min" },
+      { "id": "context-hygiene", "title": "Context Hygiene", "duration": "20min" },
+      { "id": "task-tool", "title": "Task Tool & Plan Mode", "duration": "20min" },
+      { "id": "worktrees", "title": "Worktrees & Isolation", "duration": "15min" }
+    ]
+  }
+]
