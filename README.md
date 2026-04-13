@@ -1,5 +1,7 @@
 # CAC — Claude Architect Certification
 
+[![Watch on YouTube](https://img.youtube.com/vi/wyFS10ZiuKI/maxresdefault.jpg)](https://www.youtube.com/watch?v=wyFS10ZiuKI)
+
 A complete study system for the **Claude Certified Architect (CCA)** certification by Anthropic. Three components:
 
 | Component | What it is |
