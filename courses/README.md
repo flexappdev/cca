@@ -2,11 +2,14 @@
 
 Captured course notes and lesson indexes from the Anthropic training catalogue.
 
+The app catalog in [`../app/`](../app/) is synced against this folder, so this directory is now the source material for the course library shown in the study dashboard.
+
 ## How To Use This Folder
 
 - Open a course `index.md` first for lesson navigation.
 - Use lesson `.md` files for captured notes and transcript summaries.
 - Open `*-diagram.png` assets when the visual explanation matters.
+- When a lesson is only listed in `index.md`, screenshots exist but the markdown write-up is still pending.
 
 ## Course Index
 

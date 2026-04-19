@@ -12,5 +12,6 @@ Primary source documents for the CAC repository.
 ## Related Entry Points
 
 - [../guides/README.md](../guides/README.md) for the human-friendly guide index
-- [../courses/README.md](../courses/README.md) for course-by-course notes
+- [../courses/README.md](../courses/README.md) for the 17-course capture library
 - [../cheat/README.md](../cheat/README.md) for condensed review material
+- [../README.md](../README.md) for the overall repo map

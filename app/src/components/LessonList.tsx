@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CheckCircle2, Circle, Clock } from "lucide-react";
-import type { Domain, Lesson } from "@/lib/courses";
-import { DOMAIN_COLORS } from "@/lib/courses";
+import { CheckCircle2, Circle, FileText, List } from "lucide-react";
+import type { Course, Lesson } from "@/lib/courses";
+import { COURSE_COLORS } from "@/lib/courses";
 import { loadProgress, toggleLesson } from "@/lib/progress";
 
 interface LessonListProps {
-  domain: Domain;
+  domain: Course;
 }
 
 export default function LessonList({ domain }: LessonListProps) {
-  const colors = DOMAIN_COLORS[domain.color] ?? DOMAIN_COLORS["blue"];
+  const colors = COURSE_COLORS[domain.color] ?? COURSE_COLORS["blue"];
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
@@ -59,10 +59,9 @@ export default function LessonList({ domain }: LessonListProps) {
               {lesson.title}
             </span>
 
-            {/* Duration */}
             <div className="flex items-center gap-1 text-zinc-600 text-[11px] shrink-0">
-              <Clock className="h-3 w-3" />
-              <span>{lesson.duration}</span>
+              {lesson.source === "captured" ? <FileText className="h-3 w-3" /> : <List className="h-3 w-3" />}
+              <span>{lesson.source === "captured" ? "note" : "outline"}</span>
             </div>
           </button>
         );

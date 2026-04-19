@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Trophy, Clock, CheckCircle2 } from "lucide-react";
+import { Trophy, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import { DOMAINS, DOMAIN_COLORS, getTotalMinutes, getLessonMinutes } from "@/lib/courses";
+import { COURSE_COLORS, COURSES } from "@/lib/courses";
 import { loadProgress } from "@/lib/progress";
 
 interface DomainStat {
@@ -13,13 +13,13 @@ interface DomainStat {
   completed: number;
   total: number;
   pct: number;
-  minsRemaining: number;
+  remaining: number;
 }
 
 export default function ProgressPage() {
   const [stats, setStats] = useState<DomainStat[]>([]);
   const [overall, setOverall] = useState(0);
-  const [totalMinsRemaining, setTotalMinsRemaining] = useState(0);
+  const [totalRemaining, setTotalRemaining] = useState(0);
   const [totalCompleted, setTotalCompleted] = useState(0);
   const [totalLessons, setTotalLessons] = useState(0);
 
@@ -27,29 +27,27 @@ export default function ProgressPage() {
     const data = loadProgress();
     let allCompleted = 0;
     let allTotal = 0;
-    let allMinsRemaining = 0;
+    let allRemaining = 0;
 
-    const computed: DomainStat[] = DOMAINS.map((domain) => {
+    const computed: DomainStat[] = COURSES.map((domain) => {
       const completedKeys = domain.lessons.filter(
         (l) => data.completedLessons[`${domain.id}/${l.id}`]
       );
       const completed = completedKeys.length;
       const total = domain.lessons.length;
       const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-      const minsRemaining = domain.lessons
-        .filter((l) => !data.completedLessons[`${domain.id}/${l.id}`])
-        .reduce((sum, l) => sum + getLessonMinutes(l), 0);
+      const remaining = total - completed;
 
       allCompleted += completed;
       allTotal += total;
-      allMinsRemaining += minsRemaining;
+      allRemaining += remaining;
 
-      return { id: domain.id, title: domain.title, color: domain.color, completed, total, pct, minsRemaining };
+      return { id: domain.id, title: domain.title, color: domain.color, completed, total, pct, remaining };
     });
 
     setStats(computed);
     setOverall(allTotal > 0 ? Math.round((allCompleted / allTotal) * 100) : 0);
-    setTotalMinsRemaining(allMinsRemaining);
+    setTotalRemaining(allRemaining);
     setTotalCompleted(allCompleted);
     setTotalLessons(allTotal);
   }, []);
@@ -80,11 +78,8 @@ export default function ProgressPage() {
                 </p>
               </div>
               <div className="text-right">
-                <div className="flex items-center gap-1.5 text-zinc-500 text-sm justify-end">
-                  <Clock className="h-4 w-4" />
-                  <span className="font-semibold text-zinc-300">{totalMinsRemaining}min</span>
-                </div>
-                <p className="text-xs text-zinc-600 mt-0.5">remaining</p>
+                <p className="text-lg font-semibold text-zinc-300">{totalRemaining}</p>
+                <p className="text-xs text-zinc-600 mt-0.5">lessons remaining</p>
               </div>
             </div>
             {/* Progress bar */}
@@ -105,10 +100,10 @@ export default function ProgressPage() {
 
         {/* Per-domain stats */}
         <section>
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">By Domain</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">By Course</p>
           <div className="space-y-3">
             {stats.map((stat) => {
-              const colors = DOMAIN_COLORS[stat.color] ?? DOMAIN_COLORS["blue"];
+              const colors = COURSE_COLORS[stat.color] ?? COURSE_COLORS["blue"];
               return (
                 <Link
                   key={stat.id}
@@ -132,7 +127,7 @@ export default function ProgressPage() {
                     </div>
                     <p className="text-[10px] text-zinc-600 mt-1.5">
                       {stat.completed}/{stat.total} lessons
-                      {stat.minsRemaining > 0 && ` · ${stat.minsRemaining}min remaining`}
+                      {stat.remaining > 0 && ` · ${stat.remaining} left`}
                     </p>
                   </div>
                 </Link>

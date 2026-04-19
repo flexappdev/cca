@@ -4,7 +4,7 @@
 
 1. [Claude 101](../1-claude-101/)
 2. [Claude Code 101](../2-claude-code-101/)
-3. [Introduction to Claude Cowork](../3-introduction-to-claude-code/)
+3. [Introduction to Claude Cowork](../3-introduction-to-claude-cowork/)
 4. [Claude Code in Action](../4-claude-code-in-action/)
 5. [AI Fluency: Framework & Foundations](../5-ai-fluency-framework-foundations/)
 6. [Building with the Claude API](../6-building-with-the-claude-api/)
@@ -43,56 +43,43 @@
 
 ## 1. What is Claude?
 
-Add screenshots for this topic.
+![alt text](image-1.png)
 
 ## 2. Your first conversation with Claude
 
-Add screenshots for this topic.
-
+![alt text](image-2.png)
 ## 3. Getting better results
 
-Add screenshots for this topic.
-
+![alt text](image-3.png)
 ## 4. Claude desktop app: Chat, Cowork, Code
-
-Add screenshots for this topic.
-
+![alt text](image-4.png)
 ## 5. Introduction to projects
 
-Add screenshots for this topic.
-
+![alt text](image-5.png)
 ## 6. Creating with artifacts
 
-Add screenshots for this topic.
-
+![alt text](image-6.png)
 ## 7. Working with skills
 
-Add screenshots for this topic.
-
+![alt text](image-7.png)
 ## 8. Connecting your tools
 
-Add screenshots for this topic.
-
+![alt text](image-8.png)
 ## 9. Enterprise search
 
-Add screenshots for this topic.
-
+![alt text](image-9.png)
 ## 10. Research mode for deep dives
 
-Add screenshots for this topic.
-
+![alt text](image-10.png)
 ## 11. Claude in action: use-cases by role
 
-Add screenshots for this topic.
-
+![alt text](image-11.png)
 ## 12. Other ways to work with Claude
 
-Add screenshots for this topic.
-
+![alt text](image-12.png)
 ## 13. What's next?
 
-Add screenshots for this topic.
-
+![alt text](image-13.png)
 ## 14. Certificate of completion
 
-Add screenshots for this topic.
+![alt text](image-14.png)

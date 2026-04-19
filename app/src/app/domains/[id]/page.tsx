@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, BookOpen } from "lucide-react";
-import { DOMAINS, DOMAIN_COLORS, getDomainById, getTotalMinutes } from "@/lib/courses";
+import { ArrowLeft, BookOpen, FileText, List } from "lucide-react";
+import { COURSE_COLORS, COURSES, getCapturedLessonCount, getCourseById } from "@/lib/courses";
 import LessonList from "@/components/LessonList";
 
 interface Props {
@@ -9,16 +9,17 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return DOMAINS.map((d) => ({ id: d.id }));
+  return COURSES.map((course) => ({ id: course.id }));
 }
 
 export default async function DomainPage({ params }: Props) {
   const { id } = await params;
-  const domain = getDomainById(id);
+  const domain = getCourseById(id);
   if (!domain) notFound();
 
-  const colors = DOMAIN_COLORS[domain.color] ?? DOMAIN_COLORS["blue"];
-  const totalMins = getTotalMinutes(domain);
+  const colors = COURSE_COLORS[domain.color] ?? COURSE_COLORS["blue"];
+  const capturedCount = getCapturedLessonCount(domain);
+  const outlineCount = domain.lessons.length - capturedCount;
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
@@ -38,7 +39,7 @@ export default async function DomainPage({ params }: Props) {
               className="flex items-center justify-center w-5 h-5 rounded text-[10px] font-bold text-white"
               style={{ backgroundColor: colors.hex }}
             >
-              {domain.domain}
+              {domain.course}
             </span>
             <span className="text-xs font-medium text-zinc-300 truncate">{domain.title}</span>
           </div>
@@ -53,14 +54,18 @@ export default async function DomainPage({ params }: Props) {
         >
           <h1 className="text-xl font-bold text-zinc-100 mb-2">{domain.title}</h1>
           <p className="text-sm text-zinc-400 leading-relaxed mb-5">{domain.description}</p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-5">
             <div className="flex items-center gap-1.5 text-xs text-zinc-500">
               <BookOpen className="h-3.5 w-3.5" />
               <span>{domain.lessons.length} lessons</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-zinc-500">
-              <Clock className="h-3.5 w-3.5" />
-              <span>{totalMins} minutes total</span>
+              <FileText className="h-3.5 w-3.5" />
+              <span>{capturedCount} captured notes</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-zinc-500">
+              <List className="h-3.5 w-3.5" />
+              <span>{outlineCount} outline-only entries</span>
             </div>
           </div>
         </div>
@@ -68,23 +73,23 @@ export default async function DomainPage({ params }: Props) {
         {/* Lessons */}
         <div className="mb-3 flex items-center gap-2">
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Lessons</p>
-          <span className="text-xs text-zinc-700">— click to mark complete</span>
+          <span className="text-xs text-zinc-700">— click to mark complete in your local progress</span>
         </div>
         <LessonList domain={domain} />
 
-        {/* Next domain link */}
+        {/* Next course link */}
         <div className="mt-8 pt-6 border-t border-zinc-800">
           {(() => {
-            const nextDomain = DOMAINS.find((d) => d.domain === domain.domain + 1);
+            const nextDomain = COURSES.find((course) => course.course === domain.course + 1);
             if (!nextDomain) return null;
-            const nextColors = DOMAIN_COLORS[nextDomain.color] ?? DOMAIN_COLORS["blue"];
+            const nextColors = COURSE_COLORS[nextDomain.color] ?? COURSE_COLORS["blue"];
             return (
               <Link
                 href={`/domains/${nextDomain.id}`}
                 className="flex items-center justify-between p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-all group"
               >
                 <div>
-                  <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-0.5">Next Domain</p>
+                  <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-0.5">Next Course</p>
                   <p className="text-sm font-medium text-zinc-300 group-hover:text-zinc-100 transition-colors">
                     {nextDomain.title}
                   </p>
@@ -93,7 +98,7 @@ export default async function DomainPage({ params }: Props) {
                   className="flex items-center justify-center w-7 h-7 rounded-lg text-xs font-bold text-white shrink-0"
                   style={{ backgroundColor: nextColors.hex }}
                 >
-                  {nextDomain.domain}
+                  {nextDomain.course}
                 </span>
               </Link>
             );

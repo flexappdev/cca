@@ -1,0 +1,83 @@
+# Introduction to Claude Cowork
+
+## All courses (ranked)
+
+1. [Claude 101](../1-claude-101/)
+2. [Claude Code 101](../2-claude-code-101/)
+3. [Introduction to Claude Cowork](../3-introduction-to-claude-cowork/)
+4. [Claude Code in Action](../4-claude-code-in-action/)
+5. [AI Fluency: Framework & Foundations](../5-ai-fluency-framework-foundations/)
+6. [Building with the Claude API](../6-building-with-the-claude-api/)
+7. [Introduction to Model Context Protocol](../7-introduction-to-model-context-protocol/)
+8. [AI Fluency for educators](../8-ai-fluency-for-educators/)
+9. [AI Fluency for students](../9-ai-fluency-for-students/)
+10. [Model Context Protocol: Advanced Topics](../10-model-context-protocol-advanced-topics/)
+11. [Claude with Amazon Bedrock](../11-claude-with-amazon-bedrock/)
+12. [Claude with Google Cloud's Vertex AI](../12-claude-with-google-clouds-vertex-ai/)
+13. [Teaching AI Fluency](../13-teaching-ai-fluency/)
+14. [AI Fluency for nonprofits](../14-ai-fluency-for-nonprofits/)
+15. [Introduction to agent skills](../15-introduction-to-agent-skills/)
+16. [Introduction to subagents](../16-introduction-to-subagents/)
+17. [AI Capabilities and Limitations](../17-ai-capabilities-and-limitations/)
+
+## Course overview topics
+
+1. What is Cowork?
+2. Getting set up
+3. The task loop
+4. Giving Cowork context
+5. Plugins: Cowork as a specialist
+6. Scheduled tasks
+7. File & document tasks
+8. Research & analysis at scale
+9. Permissions, usage, & choosing your model
+10. Troubleshooting & next steps
+11. Quiz on Claude Cowork
+
+## Course overview
+
+![Introduction to Claude Cowork course overview](image.png)
+
+## 1. What is Cowork?
+
+Add screenshots for this topic.
+
+## 2. Getting set up
+
+Add screenshots for this topic.
+
+## 3. The task loop
+
+Add screenshots for this topic.
+
+## 4. Giving Cowork context
+
+Add screenshots for this topic.
+
+## 5. Plugins: Cowork as a specialist
+
+Add screenshots for this topic.
+
+## 6. Scheduled tasks
+
+Add screenshots for this topic.
+
+## 7. File & document tasks
+
+Add screenshots for this topic.
+
+## 8. Research & analysis at scale
+
+Add screenshots for this topic.
+
+## 9. Permissions, usage, & choosing your model
+
+Add screenshots for this topic.
+
+## 10. Troubleshooting & next steps
+
+Add screenshots for this topic.
+
+## 11. Quiz on Claude Cowork
+
+Add screenshots for this topic.

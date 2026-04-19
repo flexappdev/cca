@@ -2,9 +2,11 @@
 
 import { Settings2, CheckCircle2 } from "lucide-react";
 import { ACCENT_PRESETS, DEFAULT_SETTINGS, useSettings, type AccentColor } from "@/lib/settings";
+import { COURSES } from "@/lib/courses";
 
 export default function SettingsPage() {
   const { settings, update } = useSettings();
+  const totalLessons = COURSES.reduce((sum, course) => sum + course.lessons.length, 0);
 
   const handleReset = () => {
     update(DEFAULT_SETTINGS);
@@ -93,12 +95,12 @@ export default function SettingsPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">App Info</p>
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl divide-y divide-zinc-800">
             {[
-              { label: "App", value: "CCA Study App" },
+              { label: "App", value: "CAC Study App" },
               { label: "Port", value: "24301" },
-              { label: "Domains", value: "5" },
-              { label: "Lessons", value: "30" },
+              { label: "Courses", value: String(COURSES.length) },
+              { label: "Lessons", value: String(totalLessons) },
               { label: "Quiz Questions", value: "15" },
-              { label: "Data Source", value: "Local JSON / TypeScript" },
+              { label: "Data Source", value: "courses/ import mirrored into local JSON" },
             ].map(({ label, value }) => (
               <div key={label} className="flex justify-between items-center px-4 py-3">
                 <span className="text-xs text-zinc-500">{label}</span>

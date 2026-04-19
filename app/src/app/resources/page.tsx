@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FolderOpen } from "lucide-react";
 
 interface Resource {
   name: string;
@@ -84,6 +84,31 @@ export default function ResourcesPage() {
       </div>
 
       <div className="max-w-[900px] mx-auto px-6 py-8 space-y-8">
+        <section className="p-5 bg-zinc-900 border border-zinc-800 rounded-xl">
+          <div className="flex items-center gap-2 mb-2">
+            <FolderOpen className="h-4 w-4 text-zinc-400" />
+            <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Repo Entry Points</p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3 text-sm text-zinc-400">
+            <div className="rounded-xl border border-zinc-800 p-4">
+              <p className="text-zinc-200 font-medium mb-1">`guides/`</p>
+              <p>Long-form study guides and navigation docs.</p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 p-4">
+              <p className="text-zinc-200 font-medium mb-1">`courses/`</p>
+              <p>Captured lesson markdown, indexes, and diagram assets.</p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 p-4">
+              <p className="text-zinc-200 font-medium mb-1">`cheat/`</p>
+              <p>Fast cram sheets for last-minute review.</p>
+            </div>
+            <div className="rounded-xl border border-zinc-800 p-4">
+              <p className="text-zinc-200 font-medium mb-1">`docs/`</p>
+              <p>Canonical repo docs including the main CCA guide.</p>
+            </div>
+          </div>
+        </section>
+
         {CATEGORIES.map((cat) => {
           const catResources = RESOURCES.filter((r) => r.category === cat);
           if (catResources.length === 0) return null;
@@ -121,9 +146,9 @@ export default function ResourcesPage() {
         <section className="p-5 bg-zinc-900 border border-zinc-800 rounded-xl">
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-2">Study Tip</p>
           <p className="text-sm text-zinc-400 leading-relaxed">
-            Focus on the Anthropic Cookbook and Claude Code Playbook first — they cover the
-            hands-on skills tested most heavily in Domains 2, 3, and 4. The official Exam Guide
-            is essential for understanding the exact scope of each domain.
+            Start with the captured course notes in this repo, then use the Anthropic Cookbook,
+            Claude Code docs, and the official exam guide to fill in implementation details and
+            confirm scope for each exam domain.
           </p>
         </section>
       </div>

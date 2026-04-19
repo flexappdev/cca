@@ -1,8 +1,8 @@
 import DomainCard from "./DomainCard";
-import type { Domain } from "@/lib/courses";
+import type { Course } from "@/lib/courses";
 
 interface DomainGridProps {
-  domains: Domain[];
+  domains: Course[];
 }
 
 export default function DomainGrid({ domains }: DomainGridProps) {

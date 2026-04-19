@@ -3,31 +3,44 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
-  MessageSquare, Terminal, Bot, Plug, FolderOpen,
-  Clock, ChevronRight,
+  MessageSquare, Terminal, Briefcase, Code2, Sparkles, Braces, Plug, BookOpen,
+  GraduationCap, Network, Cloud, Layers, Heart, Wrench, Bot, Brain, FolderOpen,
+  ChevronRight,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import type { Domain } from "@/lib/courses";
-import { DOMAIN_COLORS, getTotalMinutes } from "@/lib/courses";
+import type { Course } from "@/lib/courses";
+import { COURSE_COLORS, getCapturedLessonCount } from "@/lib/courses";
 import { getDomainProgress } from "@/lib/progress";
 
 const ICON_MAP: Record<string, React.ElementType> = {
   MessageSquare,
   Terminal,
+  Briefcase,
+  Code2,
+  Sparkles,
+  Braces,
   Bot,
   Plug,
+  BookOpen,
+  GraduationCap,
+  Network,
+  Cloud,
+  Layers,
+  Heart,
+  Wrench,
+  Brain,
   FolderOpen,
 };
 
 interface DomainCardProps {
-  domain: Domain;
+  domain: Course;
 }
 
 export default function DomainCard({ domain }: DomainCardProps) {
   const [progress, setProgress] = useState(0);
-  const colors = DOMAIN_COLORS[domain.color] ?? DOMAIN_COLORS["blue"];
+  const colors = COURSE_COLORS[domain.color] ?? COURSE_COLORS["blue"];
   const Icon = ICON_MAP[domain.icon] ?? MessageSquare;
-  const totalMins = getTotalMinutes(domain);
+  const capturedCount = getCapturedLessonCount(domain);
 
   useEffect(() => {
     setProgress(getDomainProgress(domain.id, domain.lessons.length));
@@ -47,7 +60,7 @@ export default function DomainCard({ domain }: DomainCardProps) {
               className="flex items-center justify-center w-7 h-7 rounded-lg text-xs font-bold text-white shrink-0"
               style={{ backgroundColor: colors.hex }}
             >
-              {domain.domain}
+              {domain.course}
             </div>
             {/* Icon */}
             <Icon className={`h-4.5 w-4.5 shrink-0 ${colors.text}`} style={{ width: "1.125rem", height: "1.125rem" }} />
@@ -66,13 +79,10 @@ export default function DomainCard({ domain }: DomainCardProps) {
       {/* Footer */}
       <div className="px-5 pb-5 space-y-3">
         <div className="flex items-center justify-between">
-          <Badge variant={domain.color as "blue" | "orange" | "purple" | "teal" | "pink"} className="text-[10px]">
+          <Badge variant={domain.color as never} className="text-[10px]">
             {domain.lessons.length} lessons
           </Badge>
-          <div className="flex items-center gap-1 text-zinc-600 text-[10px]">
-            <Clock className="h-3 w-3" />
-            <span>{totalMins}min</span>
-          </div>
+          <span className="text-[10px] text-zinc-600">{capturedCount} captured</span>
         </div>
 
         {/* Progress bar */}

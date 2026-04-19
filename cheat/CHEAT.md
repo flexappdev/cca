@@ -1,10 +1,12 @@
-# CCA Cheat Sheet — Claude Certified Architect
+# CCA Cheat Sheet — Codex Architect Certification
 
-> Last-minute reference. One key fact per bullet. All 5 domains.
+> Last-minute reference. One key fact per bullet. All 5 domains, plus where each topic now lives in the imported course library.
 
 ---
 
 ## Domain 1 — Prompt Engineering & AI Fluency
+
+Primary course anchors: `courses/1-claude-101/`, `courses/5-ai-fluency-framework-foundations/`, `courses/17-ai-capabilities-and-limitations/`
 
 - **System prompt anatomy:** role | context | format | constraints
 - **Turn hierarchy:** system > human > assistant (each layer can constrain the next)
@@ -20,6 +22,8 @@
 
 ## Domain 2 — Claude Code Development
 
+Primary course anchors: `courses/2-claude-code-101/`, `courses/4-claude-code-in-action/`, `courses/15-introduction-to-agent-skills/`
+
 - **CLAUDE.md load order:** `~/.claude/CLAUDE.md` → project root → subdirectory (all merged)
 - **Memory types:** `user` | `feedback` | `project` | `reference` (stored in `.claude/projects/.../memory/`)
 - **Hook types:** `PreToolUse` | `PostToolUse` | `Notification` | `Stop`
@@ -34,6 +38,8 @@
 
 ## Domain 3 — Agentic Architecture
 
+Primary course anchors: `courses/4-claude-code-in-action/`, `courses/6-building-with-the-claude-api/`, `courses/16-introduction-to-subagents/`
+
 - **Orchestrator:** plans tasks, routes to workers, synthesises results
 - **Worker / subagent:** executes a single subtask in an isolated context loop
 - **Tool call vs subagent:** tool call = simple external operation (one round trip); subagent = multi-step autonomous loop with its own context
@@ -47,6 +53,8 @@
 
 ## Domain 4 — Model Context Protocol (MCP)
 
+Primary course anchors: `courses/7-introduction-to-model-context-protocol/`, `courses/10-model-context-protocol-advanced-topics/`, `courses/11-claude-with-amazon-bedrock/`, `courses/12-claude-with-google-clouds-vertex-ai/`
+
 - **Architecture:** Host (Claude Code) → MCP Client → MCP Server → external resource
 - **Transports:** `stdio` (subprocess, local) | `SSE` (HTTP, remote)
 - **Tool definition:** JSON Schema — `name`, `description`, `inputSchema` (required)
@@ -59,6 +67,8 @@
 ---
 
 ## Domain 5 — Projects, Artifacts & Skills
+
+Primary course anchors: `courses/1-claude-101/`, `courses/2-claude-code-101/`, `courses/15-introduction-to-agent-skills/`
 
 - **Skill trigger:** `/skill-name` → agent loop executes the SKILL.md instructions
 - **Hook trigger:** event fires → shell script runs — no agent, no LLM call
@@ -78,9 +88,9 @@
 
 | Model | ID |
 |---|---|
-| Opus 4.6 | `claude-opus-4-6` |
-| Sonnet 4.6 | `claude-sonnet-4-6` |
-| Haiku 4.5 | `claude-haiku-4-5-20251001` |
+| Opus 4.6 | `Codex-opus-4-6` |
+| Sonnet 4.6 | `Codex-sonnet-4-6` |
+| Haiku 4.5 | `Codex-haiku-4-5-20251001` |
 
 > Never hardcode model IDs — store as constants or environment variables.
 
@@ -123,12 +133,12 @@
 
 ## Top 5 Anti-Patterns (Most Tested)
 
-1. **Over-prompting** — stuffing every constraint into one giant system prompt instead of layering context across turns and CLAUDE.md
+1. **Over-prompting** — stuffing every constraint into one giant system prompt instead of layering context across turns and AGENTS.md
 2. **Subagent when a tool suffices** — unnecessary overhead; use a tool call for single-step external operations
-3. **Skipping CLAUDE.md** — losing persistent context between sessions; always scaffold CLAUDE.md first
+3. **Skipping AGENTS.md** — losing persistent context between sessions; always scaffold AGENTS.md first
 4. **MCP servers without error handling** — tool failures must return structured errors, not exceptions
-5. **Hardcoding model IDs** — always use named constants (`claude-sonnet-4-6`), never string literals scattered through code
+5. **Hardcoding model IDs** — always use named constants (`Codex-sonnet-4-6`), never string literals scattered through code
 
 ---
 
-*Source: [github.com/flexappdev/cac](https://github.com/flexappdev/cac) · CCA exam prep*
+*Source: [github.com/flexappdev/cac](https://github.com/flexappdev/cac) · CAC / CCA exam prep*

@@ -9,7 +9,7 @@ import { useSettings } from "@/lib/settings";
 
 const NAV_ITEMS = [
   { href: "/",          icon: BookOpen,      label: "Courses" },
-  { href: "/domains",   icon: LayoutGrid,    label: "Domains" },
+  { href: "/domains",   icon: LayoutGrid,    label: "Library" },
   { href: "/quiz",      icon: Brain,         label: "Quiz" },
   { href: "/progress",  icon: Trophy,        label: "Progress" },
   { href: "/resources", icon: ExternalLink,  label: "Resources" },

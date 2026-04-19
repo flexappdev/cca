@@ -1,8 +1,10 @@
 import { Info, GraduationCap, BookOpen, Brain, Trophy } from "lucide-react";
 import Link from "next/link";
-import { DOMAINS } from "@/lib/courses";
+import { COURSES, EXAM_DOMAINS } from "@/lib/courses";
 
 export default function AboutPage() {
+  const totalLessons = COURSES.reduce((sum, course) => sum + course.lessons.length, 0);
+
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       {/* Header */}
@@ -24,11 +26,11 @@ export default function AboutPage() {
             <GraduationCap className="h-8 w-8" style={{ color: "var(--app-accent)" }} />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-zinc-100 mb-2">Claude Certified Architect</h2>
+            <h2 className="text-2xl font-bold text-zinc-100 mb-2">CAC Study System</h2>
             <p className="text-sm text-zinc-400 leading-relaxed max-w-[600px]">
-              The CCA certification validates expertise in designing, building, and deploying
-              production systems with Claude AI. It covers the full spectrum from prompt engineering
-              to multi-agent orchestration and MCP server development.
+              This repo combines a certification guide, cheat sheets, a captured Anthropic course
+              library, and a local Next.js dashboard. The quiz content still targets the five CCA
+              exam domains, while the catalog page now tracks the full imported course archive.
             </p>
           </div>
         </section>
@@ -38,10 +40,10 @@ export default function AboutPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Exam Overview</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { label: "Domains", value: "5", icon: BookOpen },
-              { label: "Questions", value: "~60", icon: Brain },
-              { label: "Duration", value: "90min", icon: Trophy },
-              { label: "Passing Score", value: "75%", icon: GraduationCap },
+              { label: "Courses", value: String(COURSES.length), icon: BookOpen },
+              { label: "Lessons", value: String(totalLessons), icon: Brain },
+              { label: "Exam Domains", value: String(EXAM_DOMAINS.length), icon: Trophy },
+              { label: "Quiz Questions", value: "15", icon: GraduationCap },
             ].map(({ label, value, icon: Icon }) => (
               <div key={label} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-center">
                 <Icon className="h-4 w-4 text-zinc-400 mx-auto mb-2" />
@@ -56,9 +58,9 @@ export default function AboutPage() {
 
         {/* Domains list */}
         <section>
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">The 5 Exam Domains</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Highlighted Courses</p>
           <div className="space-y-2">
-            {DOMAINS.map((domain) => (
+            {COURSES.slice(0, 6).map((domain) => (
               <Link
                 key={domain.id}
                 href={`/domains/${domain.id}`}
@@ -70,12 +72,15 @@ export default function AboutPage() {
                     backgroundColor:
                       domain.color === "blue" ? "#3b82f6" :
                       domain.color === "orange" ? "#f59e0b" :
+                      domain.color === "green" ? "#22c55e" :
+                      domain.color === "red" ? "#ef4444" :
+                      domain.color === "amber" ? "#f59e0b" :
                       domain.color === "purple" ? "#a855f7" :
                       domain.color === "teal" ? "#14b8a6" :
                       "#ec4899"
                   }}
                 >
-                  {domain.domain}
+                  {domain.course}
                 </span>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-zinc-200 group-hover:text-zinc-100 transition-colors">
@@ -91,9 +96,10 @@ export default function AboutPage() {
 
         {/* Exam body note */}
         <section className="p-5 bg-zinc-900 border border-zinc-800 rounded-xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-3">Exam Provider</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-3">How To Use It</p>
           <p className="text-sm text-zinc-400 leading-relaxed">
-            The CCA exam is administered through{" "}
+            Use the course catalog for source material, the quiz page for domain-based recall, and
+            the repo docs for the long-form guide. The current exam registration path remains{" "}
             <a
               href="https://claudecertifications.com"
               target="_blank"
@@ -103,8 +109,7 @@ export default function AboutPage() {
             >
               claudecertifications.com
             </a>{" "}
-            via Skilljar. Candidates should review the official Exam Guide and Anthropic Cookbook
-            before sitting the exam.
+            via Skilljar.
           </p>
           <div className="mt-3 flex gap-3">
             <Link

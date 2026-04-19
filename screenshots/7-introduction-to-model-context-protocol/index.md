@@ -4,7 +4,7 @@
 
 1. [Claude 101](../1-claude-101/)
 2. [Claude Code 101](../2-claude-code-101/)
-3. [Introduction to Claude Cowork](../3-introduction-to-claude-code/)
+3. [Introduction to Claude Cowork](../3-introduction-to-claude-cowork/)
 4. [Claude Code in Action](../4-claude-code-in-action/)
 5. [AI Fluency: Framework & Foundations](../5-ai-fluency-framework-foundations/)
 6. [Building with the Claude API](../6-building-with-the-claude-api/)

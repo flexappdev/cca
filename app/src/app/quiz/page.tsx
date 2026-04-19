@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Brain, RotateCcw } from "lucide-react";
 import QuizCard from "@/components/QuizCard";
-import { QUIZ_QUESTIONS, DOMAINS } from "@/lib/courses";
+import { EXAM_DOMAINS, QUIZ_QUESTIONS } from "@/lib/courses";
 
 export default function QuizPage() {
   const [domainFilter, setDomainFilter] = useState<number | null>(null);
@@ -36,9 +36,9 @@ export default function QuizPage() {
                 : "bg-zinc-900 border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300"
             }`}
           >
-            All Domains
+            All Exam Domains
           </button>
-          {DOMAINS.map((d) => (
+          {EXAM_DOMAINS.map((d) => (
             <button
               key={d.id}
               onClick={() => setDomainFilter(d.domain)}
@@ -61,6 +61,9 @@ export default function QuizPage() {
         </div>
 
         {/* Quiz cards */}
+        <p className="text-xs text-zinc-600 mb-4">
+          This review bank stays mapped to the five CCA exam domains even though the main app catalog now tracks 17 captured courses.
+        </p>
         <div className="space-y-3">
           {filtered.map((q, idx) => (
             <QuizCard key={q.id} question={q} index={idx} />

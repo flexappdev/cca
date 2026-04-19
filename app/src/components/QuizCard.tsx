@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import type { QuizQuestion } from "@/lib/courses";
-import { DOMAINS, DOMAIN_COLORS } from "@/lib/courses";
+import { EXAM_DOMAINS, COURSE_COLORS } from "@/lib/courses";
 
 interface QuizCardProps {
   question: QuizQuestion;
@@ -12,8 +12,8 @@ interface QuizCardProps {
 
 export default function QuizCard({ question, index }: QuizCardProps) {
   const [revealed, setRevealed] = useState(false);
-  const domain = DOMAINS.find((d) => d.domain === question.domain);
-  const colors = domain ? (DOMAIN_COLORS[domain.color] ?? DOMAIN_COLORS["blue"]) : DOMAIN_COLORS["blue"];
+  const domain = EXAM_DOMAINS.find((entry) => entry.domain === question.domain);
+  const colors = domain ? (COURSE_COLORS[domain.color] ?? COURSE_COLORS["blue"]) : COURSE_COLORS["blue"];
 
   return (
     <div
