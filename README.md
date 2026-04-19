@@ -2,14 +2,27 @@
 
 [![Watch on YouTube](https://img.youtube.com/vi/wyFS10ZiuKI/maxresdefault.jpg)](https://www.youtube.com/watch?v=wyFS10ZiuKI)
 
-A complete study system for the **Claude Certified Architect (CCA)** certification by Anthropic. Three components:
+A complete study system for the **Claude Certified Architect (CCA)** certification by Anthropic. It combines the exam guide, course notes, cheat sheets, and a study app in one repo.
 
 | Component | What it is |
 |---|---|
 | `/cac` skill | Claude Code agent that coaches you through exam prep |
 | `app/` | Next.js study dashboard with practice questions and progress tracking |
-| `docs/cac-guide.md` | **[Full certification guide](./docs/cac-guide.md)** — all 5 domains, code examples, anti-patterns, glossary |
-| [`cheat/CHEAT.md`](./cheat/CHEAT.md) | Condensed cheat sheet — all 5 domains, quick-reference tables, top anti-patterns |
+| [`guides/`](./guides/README.md) | Entry point for long-form guides and study references |
+| [`courses/`](./courses/README.md) | Captured course notes, lesson indexes, and diagrams |
+| [`cheat/`](./cheat/README.md) | Condensed cram sheets and quick-reference material |
+
+---
+
+## Start Here
+
+| If you want to... | Open |
+|---|---|
+| Read the full certification guide | [guides/README.md](./guides/README.md) |
+| Jump straight to the canonical exam guide | [docs/cac-guide.md](./docs/cac-guide.md) |
+| Browse captured course notes | [courses/README.md](./courses/README.md) |
+| Review last-minute exam facts | [cheat/README.md](./cheat/README.md) |
+| Use the study dashboard | [app/](./app/) |
 
 ---
 
@@ -72,6 +85,9 @@ Persistent project organisation. Custom skill automation via Claude Code's skill
 | [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Canonical code examples — start here |
 | [github.com/flexappdev/cac](https://github.com/flexappdev/cac) | This repo — guide, app, skill |
 | [Skilljar Training Courses](https://anthropic.skilljar.com/) | Official Anthropic training modules |
+| [Guides index](./guides/README.md) | Long-form reference material in this repo |
+| [Courses index](./courses/README.md) | Lesson-by-lesson notes from captured training courses |
+| [Cheat index](./cheat/README.md) | Fast review sheets and memorisation aids |
 | [Cookbook: managed_agents](https://github.com/anthropics/anthropic-cookbook/tree/main/managed_agents) | Agent SDK patterns |
 | [Cookbook: tool_use](https://github.com/anthropics/anthropic-cookbook/tree/main/tool_use) | Tool integration examples |
 | [Cookbook: claude_agent_sdk](https://github.com/anthropics/anthropic-cookbook/tree/main/claude_agent_sdk) | Building agents |
@@ -94,8 +110,14 @@ Persistent project organisation. Custom skill automation via Claude Code's skill
 cac/                        # github.com/flexappdev/cac
 ├── README.md
 ├── LICENSE
+├── guides/
+│   └── README.md           # Human-friendly index to study guides and references
 ├── docs/
-│   └── cac-guide.md        # Comprehensive 5-domain exam guide (1562 lines)
+│   ├── README.md           # Docs index
+│   └── cac-guide.md        # Comprehensive 5-domain exam guide
+├── courses/
+│   ├── README.md           # Index of captured courses and lesson notes
+│   └── */index.md          # Per-course lesson navigation
 ├── .claude/
 │   └── skills/
 │       └── cac/
@@ -103,6 +125,7 @@ cac/                        # github.com/flexappdev/cac
 ├── app/                    # Next.js study dashboard — localhost:24301
 │   └── src/
 └── cheat/
+    ├── README.md           # Cheat-sheet index
     └── CHEAT.md            # Condensed cheat sheet — all 5 domains, quick-reference tables
 ```
 

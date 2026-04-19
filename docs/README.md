@@ -1,0 +1,16 @@
+# Docs
+
+Primary source documents for the CAC repository.
+
+## Documents
+
+| Document | Purpose |
+|---|---|
+| [cac-guide.md](./cac-guide.md) | Canonical certification guide covering all five exam domains |
+| [ai-fluency-for-nonprofits.md](./ai-fluency-for-nonprofits.md) | Supplemental notes focused on the nonprofit AI fluency course |
+
+## Related Entry Points
+
+- [../guides/README.md](../guides/README.md) for the human-friendly guide index
+- [../courses/README.md](../courses/README.md) for course-by-course notes
+- [../cheat/README.md](../cheat/README.md) for condensed review material
