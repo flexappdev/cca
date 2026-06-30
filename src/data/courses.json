@@ -304,7 +304,7 @@
     "folder": "courses/15-introduction-to-agent-skills",
     "color": "pink",
     "icon": "Wrench",
-    "description": "Agent skill design, configuration, sharing, troubleshooting, and positioning skills against other Codex features.",
+    "description": "Agent skill design, configuration, sharing, troubleshooting, and positioning skills against other Claude Code features.",
     "lessons": [
       { "id": "01-what-are-skills", "title": "What Are Skills", "path": "courses/15-introduction-to-agent-skills/01-what-are-skills.md", "source": "captured" },
       { "id": "02-creating-your-first-skill", "title": "Creating Your First Skill", "path": "courses/15-introduction-to-agent-skills/02-creating-your-first-skill.md", "source": "captured" },

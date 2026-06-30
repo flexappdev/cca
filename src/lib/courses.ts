@@ -71,7 +71,7 @@ export const DOMAIN_COLORS = COURSE_COLORS;
 
 export const EXAM_DOMAINS: ExamDomain[] = [
   { id: "prompt-engineering", domain: 1, title: "Prompt Engineering & AI Fluency", color: "blue" },
-  { id: "claude-code", domain: 2, title: "Codex Development", color: "orange" },
+  { id: "claude-code", domain: 2, title: "Claude Code Development", color: "orange" },
   { id: "agentic-architecture", domain: 3, title: "Agentic Architecture", color: "purple" },
   { id: "mcp", domain: 4, title: "Model Context Protocol", color: "teal" },
   { id: "projects-artifacts", domain: 5, title: "Projects, Artifacts & Skills", color: "pink" },

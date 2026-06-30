@@ -42,7 +42,7 @@ export default function Home() {
 
         {/* Hero intro */}
         <section className="rounded-2xl border border-l-4 border-zinc-800 p-6" style={{ borderLeftColor: "var(--app-accent)", background: "color-mix(in srgb, var(--app-accent) 5%, transparent)" }}>
-          <h2 className="text-lg font-bold text-zinc-100 mb-2">Codex Certified Architect (CCA)</h2>
+          <h2 className="text-lg font-bold text-zinc-100 mb-2">Claude Certified Architect (CCA)</h2>
           <p className="text-sm text-zinc-400 leading-relaxed mb-5">
             A complete study system for the CCA certification. Combines long-form guides, captured course notes,
             cheat sheets, and progress tracking in one place.

@@ -1,4 +1,4 @@
-# CCA Cheat Sheet — Codex Architect Certification
+# CCA Cheat Sheet — Claude Certified Architect
 
 > Last-minute reference. One key fact per bullet. All 5 domains, plus where each topic now lives in the imported course library.
 
@@ -88,9 +88,9 @@ Primary course anchors: `courses/1-claude-101/`, `courses/2-claude-code-101/`, `
 
 | Model | ID |
 |---|---|
-| Opus 4.6 | `Codex-opus-4-6` |
-| Sonnet 4.6 | `Codex-sonnet-4-6` |
-| Haiku 4.5 | `Codex-haiku-4-5-20251001` |
+| Opus 4.6 | `claude-opus-4-6` |
+| Sonnet 4.6 | `claude-sonnet-4-6` |
+| Haiku 4.5 | `claude-haiku-4-5-20251001` |
 
 > Never hardcode model IDs — store as constants or environment variables.
 
@@ -137,7 +137,7 @@ Primary course anchors: `courses/1-claude-101/`, `courses/2-claude-code-101/`, `
 2. **Subagent when a tool suffices** — unnecessary overhead; use a tool call for single-step external operations
 3. **Skipping AGENTS.md** — losing persistent context between sessions; always scaffold AGENTS.md first
 4. **MCP servers without error handling** — tool failures must return structured errors, not exceptions
-5. **Hardcoding model IDs** — always use named constants (`Codex-sonnet-4-6`), never string literals scattered through code
+5. **Hardcoding model IDs** — always use named constants (`claude-sonnet-4-6`), never string literals scattered through code
 
 ---
 

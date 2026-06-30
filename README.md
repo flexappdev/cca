@@ -1,8 +1,15 @@
-# CCA — Claude Architect Certification
+# CCA — Claude Certified Architect
+
+[![Live on Vercel](https://img.shields.io/badge/live-cac--snowy.vercel.app-black?logo=vercel)](https://cac-snowy.vercel.app)
+[![GitHub](https://img.shields.io/badge/github-flexappdev%2Fcca-181717?logo=github)](https://github.com/flexappdev/cca)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)](https://nextjs.org)
 
 [![Watch on YouTube](https://img.youtube.com/vi/wyFS10ZiuKI/maxresdefault.jpg)](https://www.youtube.com/watch?v=wyFS10ZiuKI)
 
-A complete study system for the **Claude Certified Architect (CCA)** track. It combines the long-form guide, captured course notes, cheat sheets, and a local study app in one repo.
+A complete study system for the **Claude Certified Architect (CCA)** track from Anthropic. It combines the long-form guide, captured course notes, cheat sheets, and a deployed study app in one repo.
+
+- **Live:** [cac-snowy.vercel.app](https://cac-snowy.vercel.app)
+- **Local:** `npm install && npm run dev` → http://localhost:24301
 
 | Component | What it is |
 |---|---|
@@ -76,17 +83,19 @@ The quiz and long-form guide still map back to the five exam domains:
 | [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Canonical code examples |
 | [Skilljar Training Courses](https://anthropic.skilljar.com/) | Official Anthropic training modules |
 | [claudecertifications.com](https://claudecertifications.com/) | Certification portal and reference material |
+| [Live study app](https://cac-snowy.vercel.app) | Production deployment on Vercel |
 
 ---
 
 ## Repo Structure
 
 ```
-cca/                        # github.com/flexappdev/cca
+cca/                        # github.com/flexappdev/cca → cac-snowy.vercel.app
 ├── README.md
 ├── LICENSE
 ├── package.json            # Next.js 16 app at repo root (Vercel auto-detects)
 ├── next.config.ts
+├── vercel.json             # framework: nextjs (pinned for prod)
 ├── src/                    # Next.js dashboard — localhost:24301
 │   ├── app/                # routes
 │   ├── components/
